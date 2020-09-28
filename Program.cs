@@ -12,7 +12,8 @@ namespace PracticeProj
             // var obj1 = new PallindromeString();
             // obj1.PallindromeCheck("sdfgfds");
             var obj = new StringAnagram();
-            obj.AnagramCheckForString();
+            //obj.AnagramCheckForString();
+            obj.MakeAnagramByAddingChar();
         }
     }
 }

@@ -4,7 +4,9 @@ namespace PracticeProj.PracticeCode
 {
     public class StringAnagram
     {
-        /*
+        
+        public void AnagramCheckForString(){
+            /*
         Two strings are Anagram of each other if both have same frequency for each 
         character.
 
@@ -15,7 +17,6 @@ namespace PracticeProj.PracticeCode
                     first array and decrease the count while iiterating in second.
                     if all elements in freq arr is 0 -> Anagram
         */
-        public void AnagramCheckForString(){
             int[] freq = new int[26];
             string s1 = "abbccddd";
             string s2 = "bccbddadhjk";
@@ -40,6 +41,32 @@ namespace PracticeProj.PracticeCode
                 }
             }
             Console.WriteLine("Both are Anagram of each other");
+        }
+        public void MakeAnagramByAddingChar(){
+            /*
+                Given two strings , Find the minimum number of characters needs to
+                be added to both of them to make tghem Anagram of each other.
+            */
+            int ans =0;
+            int[] freq = new int[26];
+            string s1 = "abbccddd";
+            string s2 = "bccbddad";
+            int n1 = s1.Length;
+            int n2 = s2.Length;
+            char[] temp1 = s1.ToCharArray();
+            char[] temp2 = s2.ToCharArray();
+            for(int i =0;i<n1;i++){
+                freq[temp1[i]-'a']++;
+            }
+            for(int i =0;i<n2;i++){
+                freq[temp2[i]-'a']--;
+            }
+            for(int i=0;i<26;i++){
+                if(freq[i]!=0){
+                    ans+=Math.Abs(freq[i]); 
+                }
+            }
+            Console.WriteLine("You need to add "+ ans +" characters");
         }
         
     }
