@@ -7,7 +7,7 @@ namespace PracticeProj.PracticeCode
             Binary notation of x.
 
             eg - x=4; i=1;
-            ans = (x>>i)/2;
+            ans = (x>>i)%2;
 
             other solution is
             if(x & (1<<i)==(1<<i)){
